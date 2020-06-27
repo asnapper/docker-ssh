@@ -1,0 +1,36 @@
+#!/bin/bash
+
+port_regexp="([0-9]+):([0-9]+)"
+host_regexp="(.+)://(.+):(.+)"
+host="dockerd"
+ports=()
+ssh_args=""
+
+if [[ $DOCKER_HOST =~ $host_regexp ]]; then
+    host=${BASH_REMATCH[2]}
+fi
+
+echo "forwarding ports to $host"
+
+for arg in $@
+do
+    if [[ $arg =~ $port_regexp ]]; then
+        ports+=(${BASH_REMATCH[1]})
+    fi
+done
+
+for port in ${ports[@]}
+do
+    ssh_args+="-L $port:localhost:$port "
+done
+
+cmd="ssh -N $ssh_args $host"
+echo "starting ssh port-forwarding with $cmd"
+$cmd &
+ssh_pid=$!
+
+echo "starting docker"
+docker $@
+
+echo "killing ssh tunnel pid:$ssh_pid"
+kill $ssh_pid
