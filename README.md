@@ -16,6 +16,12 @@ In my development workflow, i rely heavily on WSL2 and docker. But after running
     - does absolutely not work when using `-P` (that might get implented at some point)
     - Ports will get closed immediately if you run your container with `-d` or `--detach`
 
+## Installation
+
+```
+curl -sLO https://github.com/asnapper/docker-ssh/releases/download/0.0.1/docker-ssh-0.0.1_all.deb && sudo dpkg -i docker-ssh-0.0.1_all.deb
+```
+
 ## Usage
 
 exactly like you would the regular docker-cli
