@@ -6,6 +6,12 @@ host="dockerd"
 ports=()
 ssh_args=""
 
+if [ "$1" != "run" ]; then
+    echo "only docker run <whatever options> is supported"
+    return 1 2>/dev/null
+    exit 1
+fi
+
 if [[ $DOCKER_HOST =~ $host_regexp ]]; then
     host=${BASH_REMATCH[2]}
 fi
