@@ -7,3 +7,4 @@ Essential: no
 Installed-Size: 4
 Maintainer: github.com/asnapper
 Description: Wrapper for docker-cli with automated ssh port-forwarding
+Depends: bash|openssh-client|docker-ce-cli
