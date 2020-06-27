@@ -19,7 +19,7 @@ In my development workflow, i rely heavily on WSL2 and docker. But after running
 ## Installation
 
 ```
-curl -sLO https://github.com/asnapper/docker-ssh/releases/download/0.0.1/docker-ssh-0.0.1_all.deb && sudo dpkg -i docker-ssh-0.0.1_all.deb
+curl -sLO https://github.com/asnapper/docker-ssh/releases/download/0.0.1/docker-ssh-0.0.1_all.deb && sudo dpkg -i docker-ssh-0.0.1_all.deb && sudo apt-get install -f
 ```
 
 ## Usage
