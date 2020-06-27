@@ -23,3 +23,7 @@ exactly like you would the regular docker-cli
 ```
 docker-ssh run -p 8080:80 -p 8443:443 --rm -t mendhak/http-https-echo
 ```
+
+## Disclaimer
+
+might eat your babies! Use at your own risk
