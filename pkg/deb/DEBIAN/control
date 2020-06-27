@@ -1,0 +1,9 @@
+Package: docker-ssh
+Version: 0.0.1
+Section: custom
+Priority: optional
+Architecture: all
+Essential: no
+Installed-Size: 4
+Maintainer: github.com/asnapper
+Description: Wrapper for docker-cli with automated ssh port-forwarding
